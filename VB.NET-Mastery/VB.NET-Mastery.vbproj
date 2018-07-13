@@ -48,6 +48,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data, Version=8.0.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -73,10 +76,24 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Login.vb">
+    <Compile Include="PHP MySQL Connection\cConfig.vb" />
+    <Compile Include="PHP MySQL Connection\Login2.Designer.vb">
+      <DependentUpon>Login2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PHP MySQL Connection\Login2.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.vb">
+    <Compile Include="PHP MySQL Connection\cHTTPRequest.vb" />
+    <Compile Include="PHP MySQL Connection\SecondForm2.Designer.vb">
+      <DependentUpon>SecondForm2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PHP MySQL Connection\SecondForm2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Remote MySQL Connection\Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Remote MySQL Connection\Login.Designer.vb">
       <DependentUpon>Login.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
@@ -96,15 +113,18 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="SampleModule.vb" />
-    <Compile Include="SecondForm.Designer.vb">
+    <Compile Include="Remote MySQL Connection\SecondForm.Designer.vb">
       <DependentUpon>SecondForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="SecondForm.vb">
+    <Compile Include="Remote MySQL Connection\SecondForm.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="PHP MySQL Connection\Login2.resx">
+      <DependentUpon>Login2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Remote MySQL Connection\Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -113,7 +133,7 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="SecondForm.resx">
+    <EmbeddedResource Include="Remote MySQL Connection\SecondForm.resx">
       <DependentUpon>SecondForm.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
@@ -128,6 +148,8 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
