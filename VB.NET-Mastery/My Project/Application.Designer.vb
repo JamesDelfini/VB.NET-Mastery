@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.VB.NET_Mastery.Login2
+            Me.MainForm = Global.VB.NET_Mastery.CaptureImage
         End Sub
     End Class
 End Namespace
